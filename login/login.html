@@ -17,15 +17,15 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="../js/index.js"></script>
 </head>
-<body onload="loggingUser();showAll()">
+<body onload="loggingUser();findAllPlaylist()">
 
 
 <!--nav menu-->
 <nav class="navbar" id="navbar-auth">
     <div class="navbar-left">
         <a href=""><img src="/img/logo/logo.png" height="50" width="70"/></a>
-        <a href="" class="navbar-item">Bài hát</a>
-        <a href="" class="navbar-item">Playlist</a>
+        <a href="#songList" class="navbar-item" onclick="showAll()">Bài hát</a>
+        <a href="#songList" class="navbar-item" onclick="findAllPlaylist()">Playlist</a>
         <a href="" class="navbar-item">BXH</a>
     </div>
     <div class="navbar-right">

@@ -1,4 +1,4 @@
-function findAll() {
+function findAllPlaylist() {
     $.ajax({
         url: "http://localhost:8080/api/song-playlists",
         type: "GET",
@@ -22,5 +22,5 @@ function getPlaylist(value) {
 </div>`
     }
     content += `</div></div>`
-    document.getElementById("playlist").innerHTML = content
+    document.getElementById("songList").innerHTML = content
 }

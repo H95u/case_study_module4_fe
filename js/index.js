@@ -132,5 +132,35 @@ function test() {
     });
 }
 
+function findAllPlaylist() {
+    $.ajax({
+        url: "http://localhost:8080/api/song-playlists",
+        type: "GET",
+        success: function (playlist) {
+            getPlaylist(playlist.content)
+        }
+    })
+}
 
+
+function getPlaylist(value) {
+    let content = `<h2 class="title">DANH SÁCH PLAYLIST HOT NHẤT</h2>
+<div class="playlist-container"><div class="row" style="text-align: center">`
+    for (let i = 0; i < value.length; i++) {
+        content += `<div class="col-lg-3">
+<div class="card" >
+  <img src="/img/${value[i].thumbnail}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${value[i].name}</h5>
+  
+  <span class="icon"><i class="bi bi-play-circle"></i></span>
+  </div>
+</div>
+
+</div>`
+    }
+    content += `</div></div>`
+    document.getElementById("songList").innerHTML = content
+    showLeaderBoard()
+}
 
