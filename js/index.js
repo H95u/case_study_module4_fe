@@ -11,7 +11,7 @@ function getSong(song) {
                   <h6>${song.type.name}</h6>
                 </div>
                 <div class="col-lg-1">
-                    <a href="#" onclick="test(${song.id})">
+                    <a href="#" onclick="changeListenPage(${song.id})">
                         <span class="icon"><i class="bi bi-play-circle"></i></span>
                     </a>
                 </div>
@@ -109,6 +109,28 @@ function searchByName() {
     })
 }
 
-function test(id) {
-    window.location.href
+function changeListenPage(id) {
+    $.ajax({
+        url: 'http://localhost:8080/api/songs/' + id,
+        type: 'GET',
+        success: function (response) {
+            sessionStorage.setItem("song",response)
+            window.location.href = "../test.html?id="+id;
+        }
+    });
 }
+function test() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    $.ajax({
+        url: 'http://localhost:8080/api/songs/' + id,
+        type: 'GET',
+        success: function (response) {
+            let content = `<audio src="${response.mp3}" controls autoplay></audio>`
+            document.getElementById("songList").innerHTML = content;
+        }
+    });
+}
+
+
+
