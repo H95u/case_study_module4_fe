@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý ca sĩ</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+          crossorigin="anonymous"></script>
+    <script src="../js/singer-management.js"></script>
+</head>
+<body onload="showAll()">
+<h1 style="text-align: center">Quản lý bài hát</h1>
+<hr>
+<div class="container" style="text-align: center">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createSingerModal"
+            data-singer="createS" data-type="createS" >
+        Thêm ca sĩ mới
+    </button>
+
+    <a class="btn btn-success" href="http://localhost:63343/case_study_module4_fe/admin/song-management.html?_ijt=be3884conti473o5l1kmig77u9&_ij_reload=RELOAD_ON_SAVE"> Quản lý bài hát</a>
+    <!-- Modal -->
+    <div class="modal fade" id="createSingerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm ca sĩ mới</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="name">Tên</label><br>
+                    <input type="text" id="name">
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="addNewSinger()">Thêm</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="updateSingerModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="updateModalLabel">Chỉnh sửa ca sĩ</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="name-u">Tên</label><br>
+                    <input type="text" id="name-u">
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="updateSinger()">Lưu</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="singerList"></div>
+</body>
+</html>
