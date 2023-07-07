@@ -46,12 +46,12 @@ function showAll() {
 
 function prevPage() {
     pageIndex--;
-    showAll(pageIndex);
+    showAll();
 }
 
 function nextPage() {
     pageIndex++;
-    showAll(pageIndex);
+    showAll();
 }
 
 

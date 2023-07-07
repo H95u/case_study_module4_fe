@@ -51,6 +51,16 @@ function showAll() {
     });
 }
 
+function prevPage() {
+    pageIndex--;
+    showAll();
+}
+
+function nextPage() {
+    pageIndex++;
+    showAll();
+}
+
 function getSongLeaderBoard(song) {
     return ` <tr>
                 <td>
@@ -82,10 +92,11 @@ function showLeaderBoard() {
 function searchByName() {
     let name = $("#name-search").val()
     $.ajax({
-        url: `http://localhost:8080/api/songs/search?name=${name}?page=0`,
+        url: `http://localhost:8080/api/songs/search?name=${name}`,
         type: "GET",
         success: function (data) {
-            let content = ` <div class="container-song">
+            let content = `<h2 class="title">DANH SÁCH BÀI HÁT</h2>
+                             <div class="container-song">
                                         <div class="inner-container">
                                                <div class="row">`;
             for (let i = 0; i < data.content.length; i++) {
