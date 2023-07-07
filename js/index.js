@@ -1,8 +1,8 @@
 function getSong(song) {
-    return `<hr class="hr-border"><div class="col-lg-1">
+    return `<hr class="hr-border"><div class="col-lg-2">
                     <img src="${song.img}">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <h6>${song.name}</h6>
                     <p>${song.singer.name}</p>
                 </div>
@@ -11,7 +11,7 @@ function getSong(song) {
                   <h6>${song.type.name}</h6>
                 </div>
                 <div class="col-lg-1">
-                    <a href="#">
+                    <a href="#" onclick="test(${song.id})">
                         <span class="icon"><i class="bi bi-play-circle"></i></span>
                     </a>
                 </div>
@@ -107,4 +107,8 @@ function searchByName() {
             document.getElementById("songList").innerHTML = content;
         }
     })
+}
+
+function test(id) {
+    window.location.href
 }

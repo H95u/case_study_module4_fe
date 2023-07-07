@@ -5,6 +5,9 @@ body {
     justify-content: center;
 }
 
+.col-lg-1{
+    padding-top: 20px;
+}
 
 img {
     width: 70px;
