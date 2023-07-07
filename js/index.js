@@ -153,10 +153,9 @@ function getPlaylist(value) {
   <div class="card-body">
     <h5 class="card-title">${value[i].name}</h5>
   
-  <span class="icon"><i class="bi bi-play-circle"></i></span>
+  <a href="#"><span class="icon"><i class="bi bi-play-circle"></i></span></a>
   </div>
 </div>
-
 </div>`
     }
     content += `</div></div>`
