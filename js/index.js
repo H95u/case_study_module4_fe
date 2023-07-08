@@ -122,7 +122,7 @@ function listenMusic() {
         success: function (response) {
             let content = `<div class="music">
     <div class="music-thumb">
-        <img src="https://source.unsplash.com/random" alt=""/>
+        <img src="${response.img}" alt=""/>
     </div>
     <h3 class="music-name">${response.name}</h3>
     <label for="range"></label><input type="range" name="range" id="range" class="range"/>
@@ -140,7 +140,9 @@ function listenMusic() {
         <ion-icon name="repeat-outline" class="play-repeat"></ion-icon>
     </div>
 </div>`
+            let lyric = `<p>${response.lyric}</p>`
             document.getElementById("play-music").innerHTML = content;
+            document.getElementById("lyric").innerHTML = lyric;
         }
     });
 }

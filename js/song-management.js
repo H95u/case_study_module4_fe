@@ -136,7 +136,7 @@ function getFormData() {
     let singerId = $("#singerId").val()
     let image = $("#img")[0].files[0]
     let mp3 = $("#mp3")[0].files[0]
-
+    lyric = lyric.replace(/\n/g, "<br>");
     let song = {
         name: name,
         lyric: lyric,
@@ -162,7 +162,7 @@ function getFormDataUpdate() {
     let singerId = $("#singerId-u").val()
     let image = $("#img-u")[0].files[0]
     let mp3 = $("#mp3-u")[0].files[0]
-
+    lyric = lyric.replace(/\n/g, "<br>");
     let song = {
         name: name,
         lyric: lyric,
