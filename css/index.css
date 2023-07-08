@@ -103,8 +103,10 @@ body {
 }
 
 .mySlides {
-    height: 250px;
-    width: 1000px;
+    height: 300px;
+    width: 90%;
+    margin: auto;
+    padding: 30px;
 }
 
 #content {
