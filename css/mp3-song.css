@@ -38,10 +38,9 @@ body {
     padding: 20px;
 }
 .music {
-    float: left;
+    height: auto;
     max-width: 500px;
-    margin: 180px auto;
-    border-radius: 12px;
+    border-radius: 10px;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 35px 100px 30px;

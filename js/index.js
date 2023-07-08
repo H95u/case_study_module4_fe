@@ -62,13 +62,13 @@ function nextPage() {
 }
 
 function getSongLeaderBoard(song) {
-    return ` <tr>
+    return `<tr>
                 <td>
                     <img src="${song.img}">
                 </td>
                 <td>
-                    <p>${song.singer.name}</p>
-                    <p>${song.listenCount}</p>
+                    <a href="#" onclick="changeListenPage(${song.id})"><p>${song.singer.name}</p></a>
+                    <p class="listen-count">lượt nghe : ${song.listenCount}</p>
                 </td>
             </tr>`
 }
@@ -78,9 +78,10 @@ function showLeaderBoard() {
         type: "GET",
         url: `http://localhost:8080/api/songs/leaderboard`,
         success: function (data) {
-            let content = ` <h2 class="title"> BẢNG XẾP HẠNG</h2><table>`
-
+            let content = ` <h2 class="title"> BẢNG XẾP HẠNG</h2><table class="table">`
+            let rank = 0;
             for (let i = 0; i < data.content.length; i++) {
+                content += `<td rowspan="2" style="padding-top: 30px">${++rank}</td>`
                 content += getSongLeaderBoard(data.content[i]);
             }
             content += `</table>`;
@@ -143,6 +144,7 @@ function listenMusic() {
             let lyric = `<p>${response.lyric}</p>`
             document.getElementById("play-music").innerHTML = content;
             document.getElementById("lyric").innerHTML = lyric;
+            document.getElementById("song").play();
         }
     });
 }
@@ -168,7 +170,7 @@ function getPlaylist(value) {
   <div class="card-body">
     <h5 class="card-title">${value[i].name}</h5>
   
-  <a href="#"><span class="icon"><i class="bi bi-play-circle"></i></span></a>
+  <a href="#" onclick="changePage(${value[i].id})"><span class="icon"><i class="bi bi-play-circle"></i></span></a>
   </div>
 </div>
 </div>`
