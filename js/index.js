@@ -110,24 +110,37 @@ function searchByName() {
 }
 
 function changeListenPage(id) {
-    $.ajax({
-        url: 'http://localhost:8080/api/songs/' + id,
-        type: 'GET',
-        success: function (response) {
-            sessionStorage.setItem("song",response)
-            window.location.href = "../test.html?id="+id;
-        }
-    });
+    window.location.href = "../login/mp3-song.html?id=" + id;
 }
-function test() {
+
+function listenMusic() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
     $.ajax({
         url: 'http://localhost:8080/api/songs/' + id,
         type: 'GET',
         success: function (response) {
-            let content = `<audio src="${response.mp3}" controls autoplay></audio>`
-            document.getElementById("songList").innerHTML = content;
+            let content = `<div class="music">
+    <div class="music-thumb">
+        <img src="https://source.unsplash.com/random" alt=""/>
+    </div>
+    <h3 class="music-name">${response.name}</h3>
+    <label for="range"></label><input type="range" name="range" id="range" class="range"/>
+    <audio src="${response.mp3}" id="song" controls></audio>
+  
+    <div class="controls">
+        <ion-icon name="infinite-outline" class="play-infinite"></ion-icon>
+        <ion-icon name="play-back" class="play-back"></ion-icon>
+        <div class="play">
+            <div class="player-inner">
+                <ion-icon name="play" class="play-icon"></ion-icon>
+            </div>
+        </div>
+        <ion-icon name="play-forward" class="play-forward"></ion-icon>
+        <ion-icon name="repeat-outline" class="play-repeat"></ion-icon>
+    </div>
+</div>`
+            document.getElementById("play-music").innerHTML = content;
         }
     });
 }

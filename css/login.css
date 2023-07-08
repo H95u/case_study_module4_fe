@@ -1,7 +1,6 @@
 
 *{
     margin: 0;
-    padding: 5px;
 }
 .navbar {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -69,13 +68,10 @@
 }
 
 
-#songList {
-    border: 1px solid black;
-}
 #leaderBoard {
     width: 300px;
     height: 600px;
-    border: 1px solid black;
+
 }
 
 
