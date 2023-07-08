@@ -19,11 +19,10 @@ function login() {
         success: function (data) {
             sessionStorage.setItem("token", data.token)
             sessionStorage.setItem("loggingUser", data)
-            // findAll()
             $("#username").val("")
             $("#password").val("")
             alert("Đăng nhập thành công !!")
-
+            location.reload();
         },
         error: function () {
             alert("Đăng nhập thất bại !")
@@ -34,15 +33,7 @@ function login() {
 
 function logout() {
     sessionStorage.clear()
-    let content = `<div class="search-box">
-        <input type="text" placeholder="Tìm kiếm" class="search-input">
-        <button class="search-button"><i class="fa fa-search"></i></button>
-    </div>
-    <a href="" class="navbar-item"></a>
-    <button class="navbar-item"> Đăng nhập</button>
-    |
-    <button class="navbar-item"> Đăng ký</button>`;
-    $("#navbar-auth").html(content);
+    location.reload();
 }
 
 
@@ -84,7 +75,4 @@ function loggingUser() {
     }
 }
 
-function logout() {
-    sessionStorage.clear();
-}
 

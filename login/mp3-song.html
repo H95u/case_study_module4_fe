@@ -33,15 +33,16 @@
 
 <nav class="navbar" id="navbar-auth">
     <div class="navbar-left">
-        <a href=""><img src="/img/logo/logo.png" height="50" width="70"/></a>
+        <a href="http://localhost:63343/case_study_module4_fe/login/login.html?_ijt=gknk41adca08ioghle2984q2r1&_ij_reload=RELOAD_ON_SAVE">
+            <img src="/img/logo/logo.png" height="50" width="70"/>
+        </a>
         <a href="" class="navbar-item">Bài hát</a>
         <a href="" class="navbar-item">Playlist</a>
         <a href="" class="navbar-item">BXH</a>
     </div>
     <div class="navbar-right">
         <div class="search-box">
-            <input id="name-search" type="text" placeholder="Tìm kiếm" class="search-input">
-            <button onclick="searchByName()">Search</button>
+            <input id="name-search" type="text" placeholder="Tìm kiếm" class="search-input" oninput="searchByName()">
         </div>
         <div id="register-login">
             <button class="navbar-item" data-bs-toggle="modal" data-bs-target="#auth">Đăng nhập</button>
@@ -53,8 +54,8 @@
 <!--Play Music Form-->
 <div class="container">
     <div class="row">
-        <div id="play-music" class="col-lg-7"></div>
-
+        <div id="play-music" class="col-lg-7">
+        </div>
         <div class="col-lg-5">
             <div class="lyric-container"><p style="text-align: center">LỜI BÀI HÁT</p>
                 <hr>
