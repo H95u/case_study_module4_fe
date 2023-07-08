@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MTV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+    />
+    <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="../css/mp3-song.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+<body>
+<!--Navbar-->
+
+<nav class="navbar" id="navbar-auth">
+    <div class="navbar-left">
+        <a href=""><img src="/img/logo/logo.png" height="50" width="70"/></a>
+        <a href="" class="navbar-item">Bài hát</a>
+        <a href="" class="navbar-item">Playlist</a>
+        <a href="" class="navbar-item">BXH</a>
+    </div>
+    <div class="navbar-right">
+        <div class="search-box">
+            <input id="name-search" type="text" placeholder="Tìm kiếm" class="search-input">
+            <button onclick="searchByName()">Search</button>
+        </div>
+        <div id="register-login">
+            <button class="navbar-item" data-bs-toggle="modal" data-bs-target="#auth">Đăng nhập</button>
+            |
+            <button data-bs-target="#auth-r" class="navbar-item" data-bs-toggle="modal">Đăng ký</button>
+        </div>
+    </div>
+</nav>
+<!--Play Music Form-->
+<div class="music">
+    <div class="music-thumb">
+        <img src="https://source.unsplash.com/random" alt="" />
+    </div>
+    <h3 class="music-name">Name Song</h3>
+    <label for="range"></label><input type="range" name="range" id="range" class="range" />
+    <audio src="" id="song"></audio>
+    <div class="timer">
+        <div class="duration">0:00</div>
+        <div class="remaining">-3:10</div>
+    </div>
+    <div class="controls">
+        <ion-icon name="infinite-outline" class="play-infinite"></ion-icon>
+        <ion-icon name="play-back" class="play-back"></ion-icon>
+        <div class="play">
+            <div class="player-inner">
+                <ion-icon name="play" class="play-icon"></ion-icon>
+            </div>
+        </div>
+        <ion-icon name="play-forward" class="play-forward"></ion-icon>
+        <ion-icon name="repeat-outline" class="play-repeat"></ion-icon>
+    </div>
+</div>
+</body>
+</html>
