@@ -110,44 +110,7 @@ function searchByName() {
     })
 }
 
-function changeListenPage(id) {
-    window.location.href = "../login/mp3-song.html?id=" + id;
-}
 
-function listenMusic() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('id');
-    $.ajax({
-        url: 'http://localhost:8080/api/songs/' + id,
-        type: 'GET',
-        success: function (response) {
-            let content = `<div class="music">
-    <div class="music-thumb">
-        <img src="${response.img}" alt=""/>
-    </div>
-    <h3 class="music-name">${response.name}</h3>
-    <label for="range"></label><input type="range" name="range" id="range" class="range"/>
-    <audio src="${response.mp3}" id="song" controls></audio>
-  
-    <div class="controls">
-        <ion-icon name="infinite-outline" class="play-infinite"></ion-icon>
-        <ion-icon name="play-back" class="play-back"></ion-icon>
-        <div class="play">
-            <div class="player-inner">
-                <ion-icon name="play" class="play-icon"></ion-icon>
-            </div>
-        </div>
-        <ion-icon name="play-forward" class="play-forward"></ion-icon>
-        <ion-icon name="repeat-outline" class="play-repeat"></ion-icon>
-    </div>
-</div>`
-            let lyric = `<p>${response.lyric}</p>`
-            document.getElementById("play-music").innerHTML = content;
-            document.getElementById("lyric").innerHTML = lyric;
-            document.getElementById("song").play();
-        }
-    });
-}
 
 function findAllPlaylist() {
     $.ajax({
@@ -170,7 +133,7 @@ function getPlaylist(value) {
   <div class="card-body">
     <h5 class="card-title">${value[i].name}</h5>
   
-  <a href="#" onclick="changePage(${value[i].id})"><span class="icon"><i class="bi bi-play-circle"></i></span></a>
+  <a href="#" onclick="changePlaylistPage(${value[i].id})"><span class="icon"><i class="bi bi-play-circle"></i></span></a>
   </div>
 </div>
 </div>`
