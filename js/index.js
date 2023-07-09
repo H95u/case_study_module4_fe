@@ -95,7 +95,7 @@ function searchByName() {
         url: `http://localhost:8080/api/songs/search?name=${name}`,
         type: "GET",
         success: function (data) {
-            let content = `<h2 class="title">DANH SÁCH BÀI HÁT</h2>
+            let content = `<h2 class="title">Tìm Kiếm</h2>
                              <div class="container-song">
                                         <div class="inner-container">
                                                <div class="row">`;
@@ -123,7 +123,7 @@ function listenMusic() {
             let content = `<div class="music">
     <div class="music-thumb">
         <img src="${response.img}" alt=""/>
-    </div>
+    </div>      
     <h3 class="music-name">${response.name}</h3>
     <label for="range"></label><input type="range" name="range" id="range" class="range"/>
     <audio src="${response.mp3}" id="song" controls></audio>
@@ -143,6 +143,38 @@ function listenMusic() {
             let lyric = `<p>${response.lyric}</p>`
             document.getElementById("play-music").innerHTML = content;
             document.getElementById("lyric").innerHTML = lyric;
+
+            const songList = document.getElementById.querySelectorAll(".song-item");
+            for (let i = 0; i <songList.length; i++) {
+                songList[i].classList.remove("current-song");
+                if (songList[i].dataset.id === id) {
+                    songList[i].classList.add("current-song");
+                }
+            }
+
+            document.querySelector(".play-forward").addEventListener("click", function () {
+                playNextSong();
+            });
+            document.querySelector(".play-back").addEventListener("click", function(){
+                playPreviousSong();
+            });
+
+            function playNextSong() {
+                let currentIndex = Array.from(songList).findIndex(song => song.classList.contains("current-song"));
+                currentIndex = (currentIndex + 1) % songList.length;
+                playSongById(songList[currentIndex].dataset.id);
+            }
+
+            function playPreviousSong() {
+                let currentIndex = Array.from(songList).findIndex(song => song.classList.contains("current-song"));
+                currentIndex = (currentIndex - 1 + songList.length) % songList.length;
+                playSongById(songList[currentIndex].dataset.id);
+            }
+
+            function playSongById(songId) {
+                window.location.href = "../login/mp3-song.html?id=" + songId;
+            }
+
         }
     });
 }
