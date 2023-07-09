@@ -18,7 +18,8 @@ function login() {
         data: JSON.stringify(user),
         success: function (data) {
             sessionStorage.setItem("token", data.token)
-            sessionStorage.setItem("loggingUser", data)
+            sessionStorage.setItem("loggingUserId", data.id)
+            console.log(data.id)
             $("#username").val("")
             $("#password").val("")
             alert("Đăng nhập thành công !!")
@@ -69,8 +70,8 @@ function register() {
 }
 
 function loggingUser() {
-    let loggingUser = sessionStorage.getItem("loggingUser");
-    if (loggingUser != undefined) {
+    let loggingUserId = sessionStorage.getItem("loggingUserId");
+    if (loggingUserId != undefined) {
         document.getElementById("register-login").innerHTML = `<button class="btn btn-danger" onclick="logout()">Đăng xuất</button>`
     }
 }

@@ -33,6 +33,7 @@
         <a href="#songList" class="navbar-item" onclick="showAll()">Bài hát</a>
         <a href="#songList" class="navbar-item" onclick="findAllPlaylist()">Playlist</a>
         <a href="" class="navbar-item">BXH</a>
+        <a href="#" class="navbar-item" onclick="createPlaylist()">Tạo playlist</a>
     </div>
     <div class="navbar-right">
         <div class="search-box">
@@ -97,6 +98,26 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Trở lại</button>
                 <button type="button" class="btn btn-primary" id="btn-auth-r" onclick="register()">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal add playlist-->
+<div class="modal fade" id="selectPlaylistModal" tabindex="-1" aria-labelledby="selectPlaylist" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Chọn playlist mà bạn muốn thêm bài hát</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="text-align: center">
+                <div id="selectPlaylist"></div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="addSongToPlaylist()">Thêm</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
             </div>
         </div>
     </div>

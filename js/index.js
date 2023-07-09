@@ -16,7 +16,7 @@ function getSong(song) {
                     </a>
                 </div>
                 <div class="col-lg-1">
-                    <a href="#">
+                    <a href="#" onclick="getAllPlaylistOfUser(${song.id})">
                         <span class="icon"><i class="bi bi-heart"></i></span>
                     </a>
                 </div>`
@@ -108,7 +108,6 @@ function searchByName() {
 }
 
 
-
 function findAllPlaylist() {
     $.ajax({
         url: "http://localhost:8080/api/song-playlists",
@@ -138,5 +137,100 @@ function getPlaylist(value) {
     content += `</div></div>`
     document.getElementById("songList").innerHTML = content
     showLeaderBoard()
+}
+
+function createPlaylist() {
+    let loggingUserId = getLoggingUserId();
+    if (isNaN(loggingUserId)) {
+        alert("Bạn phải đăng nhập để tạo playlist !!");
+        $('#auth').modal('show');
+    } else {
+        let playlistName = prompt("Mời bạn nhập tên playlist !!")
+        if (playlistName) {
+            let newPlaylist = {
+                user: {
+                    id: loggingUserId
+                },
+                name: playlistName
+            }
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                url: "http://localhost:8080/api/user-playlists",
+                type: "POST",
+                data: JSON.stringify(newPlaylist),
+                success: function () {
+                    alert("Tạo mới playlist thành công !")
+                }
+            })
+        }
+    }
+}
+
+function addSongToPlaylist() {
+    let songId = parseInt(sessionStorage.getItem("songId"));
+    let playlistId = $("#playListId").val();
+    let playlistSongsDTO = {
+        playlistId: playlistId,
+        songId: songId
+    }
+    $.ajax({
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        url: "http://localhost:8080/api/user-playlists/add-song",
+        type: "POST",
+        data: JSON.stringify(playlistSongsDTO),
+        success: function () {
+            alert("Thêm bài hát thành công !")
+            $('#selectPlaylistModal').modal('hide');
+        }
+    })
+}
+
+
+function getAllPlaylistOfUser(songId) {
+    sessionStorage.setItem("songId", songId);
+    let loggingUserId = getLoggingUserId();
+    if (isNaN(loggingUserId)) {
+        alert("Bạn phải đăng nhập để thêm bài hát vào playlist !!");
+        $('#auth').modal('show');
+    } else {
+        $.ajax({
+            url: `http://localhost:8080/api/user-playlists/user/${loggingUserId}`,
+            type: "GET",
+            statusCode: {
+                200: function (data) {
+                    if (data.length !== 0) {
+                        let content = `<select id="playListId">`;
+                        for (let i = 0; i < data.length; i++) {
+                            content += getSelectPlaylist(data[i]);
+                        }
+                        content += `</select>`;
+                        document.getElementById("selectPlaylist").innerHTML = content;
+                        $('#selectPlaylistModal').modal('show');
+                    } else {
+                        alert("Bạn chưa có playlist nào !!");
+                    }
+                },
+                204: function () {
+                    alert("Bạn chưa có playlist nào !! Tạo ngay !!");
+                    createPlaylist();
+                }
+            }
+        });
+    }
+}
+
+
+function getSelectPlaylist(playlist) {
+    return `<option value="${playlist.id}">${playlist.name}</option>`
+}
+
+function getLoggingUserId() {
+    return parseInt(sessionStorage.getItem("loggingUserId"));
 }
 
