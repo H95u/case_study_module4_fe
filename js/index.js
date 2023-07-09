@@ -62,12 +62,9 @@ function nextPage() {
 }
 
 function getSongLeaderBoard(song) {
-    return `<tr>
+    return `<tr>    
                 <td>
-                    <img src="${song.img}">
-                </td>
-                <td>
-                    <a href="#" onclick="changeListenPage(${song.id})"><p>${song.singer.name}</p></a>
+                    <a href="#" onclick="changeListenPage(${song.id})"><p style="font-size: 15px">${song.name} <br> <span style="font-size: 10px">${song.singer.name}</span></p></a>
                     <p class="listen-count">lượt nghe : ${song.listenCount}</p>
                 </td>
             </tr>`
