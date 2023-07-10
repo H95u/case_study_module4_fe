@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -33,6 +34,7 @@ img {
     display: block;
     max-width: 100%;
 }
+
 body {
     font-family: "Poppins", sans-serif;
     padding: 20px;
@@ -117,7 +119,7 @@ body {
 
 .lyric-container {
     text-align: center;
-    height: 800px;
+    height: 600px;
     overflow-y: scroll;
     width: 500px;
     background-color: white;

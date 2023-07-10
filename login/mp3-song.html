@@ -8,32 +8,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
-            rel="stylesheet"
-    />
-    <script
-            type="module"
-            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-            nomodule
-            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-    <link rel="stylesheet" href="../css/mp3-song.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
     <script src="../js/index.js"></script>
-<<<<<<< HEAD
-    <script src="https://code.jquery.com/jquery-3.7.0.js"
-            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-=======
-    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
->>>>>>> playlist
-    <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="/css/index.css">
     <script src="../js/listen-playlist.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+    <link rel="stylesheet" href="../css/mp3-song.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="../css/footer.css">
 
 </head>
@@ -60,13 +53,13 @@
         </div>
     </div>
 </nav>
-<!--Play Music Form-->
-<div>
 
-    <div class="container">
+<!--Play Music Form-->
+<div class="container">
+
+    <div>
         <div class="row" style="margin-top: 200px">
-            <div id="play-music" class="col-lg-7">
-            </div>
+            <div id="play-music" class="col-lg-7"></div>
             <div class="col-lg-5">
                 <div class="lyric-container"><p style="text-align: center">LỜI BÀI HÁT</p>
                     <hr>
@@ -77,57 +70,67 @@
     </div>
 
 
-    <div class="row" id="t-box-footer">
-            <div class="image-slider">
-                <div class="image-item">
-                    <div class="image">
-                        <img
-                                src="https://stc-id.nixcdn.com/v11/images/footer/12.png"
-                                alt="jyp entertainment"
-                        />
-                    </div>
-                </div>
-                <div class="image-item">
-                    <div class="image">
-                        <img
-                                src="https://stc-id.nixcdn.com/v11/images/footer/12.png"
-                                alt="sky music"
-                        />
-                    </div>
-                </div>
-                <div class="image-item">
-                    <div class="image">
-                        <img
-                                src="https://stc-id.nixcdn.com/v11/images/footer/monstercat.png"
-                                alt="monster cat"
-                        />
-                    </div>
-                </div>
-                <div class="image-item">
-                    <div class="image">
-                        <img
-                                src="https://stc-id.nixcdn.com/v11/images/footer/8.png"
-                                alt=""
-                        />
-                    </div>
-                </div>
-                <div class="image-item">
-                    <div class="image">
-                        <img
-                                src="https://stc-id.nixcdn.com/v11/images/footer/2-new.png"
-                                alt="SONY MUSIC"
-                        />
-                    </div>
-                </div>
-                <div class="image-item">
-                    <div class="image">
-                        <img
-                                src="https://stc-id.nixcdn.com/v11/images/footer/19.png"
-                                alt="YG MUSIC"
-                        />
-                    </div>
-                </div>
+    <!--footer-->
+        <footer class="t-box-footer">
 
+            <div id="carouselFooter" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" style="width: 100%">
+                    <!-- Thêm các slide ảnh -->
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img class="img-carousel"
+                                     src="https://stc-id.nixcdn.com/v11/images/footer/12.png"
+                                     alt="jyp entertainment">
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="https://stc-id.nixcdn.com/v11/images/footer/monstercat.png"
+                                     alt="monster cat">
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="https://stc-id.nixcdn.com/v11/images/footer/8.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="https://stc-id.nixcdn.com/v11/images/footer/2-new.png"
+                                     alt="SONY MUSIC">
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="https://stc-id.nixcdn.com/v11/images/footer/19.png" alt="YG MUSIC">
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="https://stc-id.nixcdn.com/v11/images/footer/17.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="https://stc-id.nixcdn.com/v11/images/footer/1-new.png" alt="">
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="https://stc-id.nixcdn.com/v11/images/footer/20.png" alt="">
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="https://stc-id.nixcdn.com/v11/images/footer/3-new.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFooter"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselFooter"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
 
             <div class="contact-info">
@@ -151,8 +154,9 @@
                     </a>
                 </div>
             </div>
-    </div>
+        </footer>
 
 </div>
+
 </body>
 </html>
