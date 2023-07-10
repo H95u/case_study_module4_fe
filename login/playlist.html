@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist</title>
+  <link rel="stylesheet" href="../css/playlist.css">
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+<nav class="navbar" id="navbar-auth">
+  <div class="navbar-left">
+    <a href=""><img src="/img/logo/logo.png" height="50" width="70"/></a>
+    <a href="#songList" class="navbar-item" onclick="showAll()">Bài hát</a>
+    <a href="#songList" class="navbar-item" onclick="findAllPlaylist()">Playlist</a>
+    <a href="" class="navbar-item">BXH</a>
+  </div>
+  <div class="navbar-right">
+    <div class="search-box" >
+      <input id="name-search" type="text" placeholder="Tìm kiếm" class="search-input" oninput="searchByName()">
+    </div>
+    <div id="register-login">
+      <button class="navbar-item" data-bs-toggle="modal" data-bs-target="#auth">Đăng nhập</button>
+      |
+      <button data-bs-target="#auth-r" class="navbar-item" data-bs-toggle="modal">Đăng ký</button>
+    </div>
+  </div>
+</nav>
+
+<div class="main-wrapper" style="float: left">
+  <div class="mtv-layout-bd column2 boxShowCase" id="resizableRight">
+      <ul id="list-item-music" class="list-item-music">
+        <li id="itemSong_1" class="cur">
+          <span class="line-opacity"></span>
+          <span class="no_stt"></span>
+          <span class="name_song">Test List</span>
+          <div class="singer_content">
+            <div class="singer_item">
+              <span class="pl_10">
+                <a href="" class="name_singer">Lê Bảo Bình</a>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li id="itemSong_2" class="cur">
+          <span class="line-opacity"></span>
+          <span class="no_stt"></span>
+          <span class="name_song">Test List</span>
+          <div class="singer_content" >
+            <div class="singer_item">
+              <span class="pl_10">
+                <a href="" class="name_singer" >Module 4</a>
+              </span>
+            </div>
+          </div>
+        </li>
+        <li id="itemSong_3" class="cur">
+          <span class="line-opacity"></span>
+          <span class="no_stt"></span>
+          <span class="name_song">Test List</span>
+          <div class="singer_content" >
+            <div class="singer_item">
+              <span class="pl_10">
+                <a href="" class="name_singer">Vi Lâm</a>
+              </span>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </div>
+</div>
+<div class="img-singer">
+  <img src="" alt="">
+</div>
+</body>
+</html>

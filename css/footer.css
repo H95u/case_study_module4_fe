@@ -76,3 +76,44 @@ img {
 .social-links img:first-child {
     margin-left: 20px;
 }
+.carousel-inner {
+    height: 200px;
+    width: 85%;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-inner img {
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
+    margin: auto;
+}
+
+
+.carousel-item {
+    border: 0px rgba(0, 0, 0, 0.125);
+    overflow: hidden;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 30px;
+    height: 30px;
+    background-color: #031f50;
+    border: none;
+    opacity: 0.8;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #031f50; /* Màu của biểu tượng */
+    width: 20px; /* Điều chỉnh kích thước của biểu tượng */
+    height: 20px; /* Điều chỉnh kích thước của biểu tượng */
+    transform: scale(1.5); /* Điều chỉnh kích thước của biểu tượng */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1; /* Hiển thị đầy đủ nút điều khiển khi rê chuột qua */
+}
