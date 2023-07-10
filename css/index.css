@@ -143,12 +143,23 @@ a:hover {
     font-style: italic;
 }
 
+
 #body-container{
     height: 1600px;
 }
 
 #leaderboard-container{
     padding-left: 50px;
+}
+
+
+.wrapper {
+    width:100%;
+    padding:20px;
+    height: 150px;
+}
+.form-control {
+    text-align: center;
 }
 
 
