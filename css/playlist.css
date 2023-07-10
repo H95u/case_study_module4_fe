@@ -1,0 +1,89 @@
+/* Playlist CSS */
+
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Main container */
+.main-wrapper {
+    width: 800px;
+    margin: 80px auto;
+    padding: 20px;
+    justify-content: flex-start; /
+}
+
+.singer_content {
+
+}
+
+li {
+    border-top: #d5cfcf solid;
+}
+
+/* Playlist item */
+.list-item-music li {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.list-item-music .line-opacity {
+    width: 5px;
+    height: 100%;
+    background-color: #f2f2f2;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.list-item-music .no_stt {
+    margin-right: 10px;
+    position: relative;
+}
+
+.list-item-music .no_stt::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('https://stc-id.nixcdn.com/v11/cloud/images/icon_status.gif') no-repeat center;
+}
+
+.list-item-music .name_song {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.list-item-music .name_singer {
+    color: #888;
+    text-decoration: none;
+}
+
+.list-item-music .name_singer:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the current song */
+.list-item-music .cur {
+    background-color: #f2f2f2;
+}
+
+.list-item-music .cur .name_song {
+    color: #333;
+}
+
+.list-item-music .cur .name_singer {
+    color: #666;
+}
+
+.list-item-music .cur .name_singer:hover {
+    text-decoration: none;
+    color: #333;
+}
+
+.singer_content {
+    float: left;
+}
