@@ -7,6 +7,11 @@ body {
     padding: 0;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .col-lg-1 {
     padding-top: 35px;
 }
@@ -66,7 +71,6 @@ body {
     text-decoration: none;
     padding: 17px;
     border-radius: 10px;
-
 }
 
 .navbar-right {
@@ -137,6 +141,14 @@ a:hover {
     font-size: 10px;
     font-weight: lighter;
     font-style: italic;
+}
+
+#body-container{
+    height: 1600px;
+}
+
+#leaderboard-container{
+    padding-left: 50px;
 }
 
 

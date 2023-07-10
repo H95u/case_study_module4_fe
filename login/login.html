@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../css/footer.css">
 
 </head>
-<body onload="loggingUser();findAllPlaylist()">
+<body onload="loggingUser();findAllPlaylist();showLeaderBoard()">
 
 
 <!--nav menu-->
@@ -126,22 +126,27 @@
 <div id="content">
     <div class="container">
         <div class="row" id="banner">
-            <img class="mySlides" src="/img/slide-show/blackpink-4k-g5-2048x1152.jpg">
-            <img class="mySlides" src="/img/slide-show/blackpink-z74mevbna0lcbl8c.jpg">
-            <img class="mySlides" src="/img/slide-show/wallpapersden.com_blackpink-4k_1024x576.jpg">
-        </div>
-
-        <div class="row">
-            <div id="songList" class="col-lg-9"></div>
-
-            <div id="leaderBoard" class="col-lg-3"></div>
+            <img class="mySlides" src="/img/slide-show/z4502643646820_1c70d44e49f92eca96dd2bfacd9c6a7f.jpg">
+            <img class="mySlides" src="/img/slide-show/z4502643651264_c78f598ac3c5d1715dc6ab748a2ab348.jpg">
+            <img class="mySlides" src="/img/slide-show/z4502643651269_6958bfa2391b0a69398e98a3b3b25304.jpg">
         </div>
     </div>
 
-    <hr>
+    <div class="container"  id="body-container">
+        <div class="row" style="margin-top: 100px">
+            <div id="songList" class="col-lg-8">
+            </div>
+            <div class="col-lg-4" id="leaderboard-container">
+                <div><h2 class="title" style="text-align: center">BẢNG XẾP HẠNG</h2>
+                    <div id="leaderBoard"></div>
+                </div>
+            </div>
+        </div>
 
-    <div class="row" id="t-box-footer">
-        <footer>
+    </div>
+
+
+    <div id="t-box-footer">
             <div class="image-slider">
                 <div class="image-item">
                     <div class="image">
@@ -215,7 +220,6 @@
                     </a>
                 </div>
             </div>
-        </footer>
     </div>
 </div>
 </body>

@@ -46,7 +46,6 @@ function showAll() {
             }
             content += `</div></div>`;
             document.getElementById("songList").innerHTML = content;
-            showLeaderBoard()
         }
     });
 }
@@ -75,7 +74,7 @@ function showLeaderBoard() {
         type: "GET",
         url: `http://localhost:8080/api/songs/leaderboard`,
         success: function (data) {
-            let content = ` <h2 class="title"> BẢNG XẾP HẠNG</h2><table class="table">`
+            let content = `<table class="table">`
             let rank = 0;
             for (let i = 0; i < data.content.length; i++) {
                 content += `<td rowspan="2" style="padding-top: 30px">${++rank}</td>`
@@ -136,7 +135,6 @@ function getPlaylist(value) {
     }
     content += `</div></div>`
     document.getElementById("songList").innerHTML = content
-    showLeaderBoard()
 }
 
 function createPlaylist() {
