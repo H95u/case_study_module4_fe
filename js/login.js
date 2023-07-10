@@ -72,8 +72,65 @@ function register() {
 function loggingUser() {
     let loggingUserId = sessionStorage.getItem("loggingUserId");
     if (loggingUserId != undefined) {
+        document.getElementById("see-playlist").innerHTML =
+            `<a href="http://localhost:63343/case_study_module4_fe/login/listen-my-playlist.html?_ijt=fpvctg179jinqbrnlb3mv28l6v&_ij_reload=RELOAD_ON_SAVE" class="navbar-item">Playlist của bạn</a>`
         document.getElementById("register-login").innerHTML = `<button class="btn btn-danger" onclick="logout()">Đăng xuất</button>`
     }
 }
 
 
+let index = 0;
+
+let playListIndex;
+
+function seeMyPlaylist(plIndex) {
+    let loggingUserId = sessionStorage.getItem("loggingUserId");
+    playListIndex = plIndex;
+    $.ajax({
+        url: "http://localhost:8080/api/user-playlists/user/" + loggingUserId,
+        type: "GET",
+        success: function (data) {
+            let songContent = `<table class="table">`;
+            let content = `<table class="table table-hover" style="text-align: center">`
+            for (let i = 0; i < data.length; i++) {
+                content += getMyPlaylistName(data[i], i);
+            }
+
+            songContent += getSongPlaylist(data[playListIndex].song)
+            content += `</table>`
+
+            songContent += `</table>`
+            document.getElementById("my-playlist").innerHTML = content;
+            document.getElementById("songList").innerHTML = songContent;
+            document.getElementById("lyric").innerHTML = `<p>${data[playListIndex].song[index].lyric}</p>`;
+            document.getElementById("my-playlist-title").innerHTML = `<h1> ${data[playListIndex].name}</h1>`;
+            document.getElementById("listen-music").innerHTML = `<audio id="song" src="${data[playListIndex].song[index].mp3}" controls>`;
+            document.getElementById("song").play();
+        },
+        error: function () {
+            alert("Lỗi !")
+        }
+    })
+}
+
+function getMyPlaylistName(playlist, playListIndex) {
+    return `<tr><td><a href="#" onclick="seeMyPlaylist(${playListIndex})">${playlist.name}</a></td></tr> `
+}
+
+
+function getSongPlaylist(songList) {
+    let content = "";
+    for (let i = 0; i < songList.length; i++) {
+        content += `<tr>
+<th colspan="2">${songList[i].name} - ${songList[i].singer.name}</th>
+<td ><a href="#" onclick="updateIndex(${i})"><span class="icon"><i class="bi bi-play-circle"></i></span>
+</a></td>
+</tr>`
+    }
+    return content;
+}
+
+function updateIndex(i) {
+    index = i;
+    seeMyPlaylist(playListIndex)
+}

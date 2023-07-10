@@ -117,8 +117,8 @@ body {
 
 .lyric-container {
     text-align: center;
-    border-radius: 10px;
-    height: auto;
+    height: 800px;
+    overflow-y: scroll;
     width: 500px;
     background-color: white;
 }

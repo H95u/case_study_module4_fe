@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#top {
+    background-color: #999999;
+    height: 100px;
+}
+
+#mid-left {
+    background-color: black;
+}
+
+#mid-right {
+    background-color: black;
+    overflow-y: scroll;
+    height: 600px;
+    text-align: center;
+}
+
+
+#mid {
+    height: 500px;
+    background-color: silver;
+}
+
+#bottom {
+    text-align: center;
+    background-color: white;
+}
+
+#logo {
+    padding: 20px;
+}
+
+.title-m {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#song {
+    width: 500px;
+}
+

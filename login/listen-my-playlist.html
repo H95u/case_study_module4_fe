@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My playlist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/my-playlist.css">
+    <script src="../js/login.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body onload="seeMyPlaylist(0)">
+<div class="row" id="top">
+    <div class="col-lg-5" id="logo">
+        <a href=""><img src="/img/logo/logo.png" height="50" width="70"/></a>
+    </div>
+    <div class="col-lg-5"><a href="http://localhost:63343/case_study_module4_fe/login/login.html?_ijt=uc25vgcoicvhec23v094fdvfb6&_ij_reload=RELOAD_ON_SAVE"><i class="bi bi-house-heart-fill" style="font-size: 60px"></i></a></div>
+    <div class="col-lg-2">My account</div>
+</div>
+<div id="mid">
+    <div class="row">
+        <div class="col-lg-2" id="mid-left">
+            <p class="title-m">Danh sách playlist</p>
+            <hr>
+            <div id="my-playlist"></div>
+        </div>
+        <div class="col-lg-6" id="mid-mid">
+            <div class="title-m" id="my-playlist-title"></div>
+            <hr>
+            <div id="songList"></div>
+        </div>
+        <div class="col-lg-4" id="mid-right">
+            <p class="title-m">Lời bài hát</p>
+            <div id="lyric"></div>
+        </div>
+    </div>
+</div>
+
+<div id="bottom">
+    <div id="listen-music">
+
+    </div>
+</div>
+</body>
+</html>
