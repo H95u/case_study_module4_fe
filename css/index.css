@@ -138,7 +138,14 @@ a:hover {
     font-weight: lighter;
     font-style: italic;
 }
-
+.wrapper {
+    width:100%;
+    padding:20px;
+    height: 150px;
+}
+.form-control {
+    text-align: center;
+}
 
 
 

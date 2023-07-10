@@ -205,7 +205,7 @@ function getAllPlaylistOfUser(songId) {
             statusCode: {
                 200: function (data) {
                     if (data.length !== 0) {
-                        let content = `<select id="playListId">`;
+                        let content = `<select id="playListId" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>`;
                         for (let i = 0; i < data.length; i++) {
                             content += getSelectPlaylist(data[i]);
                         }
