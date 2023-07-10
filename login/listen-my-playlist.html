@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="../css/my-playlist.css">
     <script src="../js/login.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="../js/index.js"></script>
 </head>
 <body onload="seeMyPlaylist(0)">
 <div class="row" id="top">
     <div class="col-lg-5" id="logo">
-        <a href=""><img src="/img/logo/logo.png" height="50" width="70"/></a>
+        <a href="http://localhost:63343/case_study_module4_fe/login/login.html?_ijt=uc25vgcoicvhec23v094fdvfb6&_ij_reload=RELOAD_ON_SAVE"><img src="/img/logo/logo.png" height="50" width="70"/></a>
     </div>
-    <div class="col-lg-5"><a href="http://localhost:63343/case_study_module4_fe/login/login.html?_ijt=uc25vgcoicvhec23v094fdvfb6&_ij_reload=RELOAD_ON_SAVE"><i class="bi bi-house-heart-fill" style="font-size: 60px"></i></a></div>
+    <div class="col-lg-5"><a href="http://localhost:63343/case_study_module4_fe/login/login.html?_ijt=uc25vgcoicvhec23v094fdvfb6&_ij_reload=RELOAD_ON_SAVE"><i class="bi bi-house-heart-fill" style="font-size: 60px;padding-left: 90px"></i></a></div>
     <div class="col-lg-2">My account</div>
 </div>
 <div id="mid">
@@ -28,6 +29,7 @@
             <p class="title-m">Danh sách playlist</p>
             <hr>
             <div id="my-playlist"></div>
+            <div><i class="bi bi-plus-square" onclick="createPlaylist()"></i></div>
         </div>
         <div class="col-lg-6" id="mid-mid">
             <div class="title-m" id="my-playlist-title"></div>

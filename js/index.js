@@ -161,6 +161,7 @@ function createPlaylist() {
                 data: JSON.stringify(newPlaylist),
                 success: function () {
                     alert("Tạo mới playlist thành công !")
+                    window.location.reload();
                 }
             })
         }
