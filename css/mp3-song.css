@@ -124,3 +124,13 @@ body {
     width: 500px;
     background-color: white;
 }
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+}
+
+#play-music{
+    padding-left: 200px;
+}
