@@ -19,6 +19,7 @@ function login() {
         success: function (data) {
             sessionStorage.setItem("token", data.token)
             sessionStorage.setItem("loggingUserId", data.id)
+            sessionStorage.setItem("permit", data.authorities[0].authority)
             console.log(data.id)
             $("#username").val("")
             $("#password").val("")
@@ -70,10 +71,15 @@ function register() {
 }
 
 function loggingUser() {
+    let permit = sessionStorage.getItem("permit")
     let loggingUserId = sessionStorage.getItem("loggingUserId");
     if (loggingUserId != undefined) {
-        document.getElementById("see-playlist").innerHTML =
-            `<a href="http://localhost:63343/case_study_module4_fe/login/listen-my-playlist.html?_ijt=fpvctg179jinqbrnlb3mv28l6v&_ij_reload=RELOAD_ON_SAVE" class="navbar-item">Playlist của bạn</a>`
+        let content = "";
+        if (permit === "ROLE_ADMIN") {
+            content += `<a href="#" class="navbar-item" onclick="changePageManagement()">Đến giao diện quản lý</a>`
+        }
+        content += `<a href="http://localhost:63343/case_study_module4_fe/login/listen-my-playlist.html?_ijt=fpvctg179jinqbrnlb3mv28l6v&_ij_reload=RELOAD_ON_SAVE" class="navbar-item">Playlist của bạn</a>`
+        document.getElementById("see-playlist").innerHTML = content
         document.getElementById("register-login").innerHTML = `<button class="btn btn-danger" onclick="logout()">Đăng xuất</button>`
     }
 }
@@ -133,4 +139,8 @@ function getSongPlaylist(songList) {
 function updateIndex(i) {
     index = i;
     seeMyPlaylist(playListIndex)
+}
+
+function changePageManagement() {
+    window.location.href = "http://localhost:63343/case_study_module4_fe/admin/song-management.html?_ijt=7n8o1jsh2rgfd6mpj7f687ni3t&_ij_reload=RELOAD_ON_SAVE"
 }

@@ -35,13 +35,13 @@ function listenPlayList(index) {
 function getListMusic(listMusic) {
     let content = `<hr><table class="table" >`
     for (let i = 0; i < listMusic.length; i++) {
-        content += getSongPlaylist(listMusic[i],i)
+        content += getSongPlaylist(listMusic[i], i)
     }
     content += `</table>`
     return content;
 }
 
-function getSongPlaylist(song,index) {
+function getSongPlaylist(song, index) {
     return `<tr>
 <td><img src="${song.img}"></td>
 <th colspan="2">${song.name} - ${song.singer.name}</th>
@@ -87,4 +87,9 @@ function listenMusic() {
             document.getElementById("song").play();
         }
     });
+}
+
+function backToHome() {
+    window.location.href = "http://localhost:63343/case_study_module4_fe/login/login.html?_ijt=1qsjtpncvffebbe7pm63tse658&_ij_reload=RELOAD_ON_SAVE"
+    showAll();
 }

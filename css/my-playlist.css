@@ -18,6 +18,9 @@ body {
 
 #mid-left {
     background-color: black;
+    height: 600px;
+    text-align: center;
+
 }
 
 #mid-right {
@@ -25,6 +28,7 @@ body {
     overflow-y: scroll;
     height: 600px;
     text-align: center;
+
 }
 
 
@@ -40,6 +44,7 @@ body {
 
 #logo {
     padding: 20px;
+   height: 80px;
 }
 
 .title-m {
