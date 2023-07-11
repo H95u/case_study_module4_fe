@@ -103,6 +103,6 @@ function listenMusic() {
 }
 
 function backToHome() {
-    window.location.href = "http://localhost:63343/case_study_module4_fe/login/login.html?_ijt=1qsjtpncvffebbe7pm63tse658&_ij_reload=RELOAD_ON_SAVE"
+    window.location.href = "../login/home.html"
     showAll();
 }

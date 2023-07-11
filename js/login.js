@@ -35,7 +35,8 @@ function login() {
 
 function logout() {
     sessionStorage.clear()
-    location.reload();
+    window.location.href = "http://localhost:63342/case_study_module4_fe/login/home.html?_ijt=t4e8mcfdo4dp8lvp278oe15hia&_ij_reload=RELOAD_ON_SAVE";
+    alert("Đăng xuất thành công !!")
 }
 
 
@@ -64,7 +65,7 @@ function register() {
         success: function () {
             $("#username-r").val("")
             $("#password-r").val("")
-            alert("Register successfully!")
+            alert("Đăng ký thành công !!")
         }
     })
     $('#auth-r').modal('hide');
@@ -78,10 +79,14 @@ function loggingUser() {
         if (permit === "ROLE_ADMIN") {
             content += `<a href="#" class="navbar-item" onclick="changePageManagement()">Đến giao diện quản lý</a>`
         }
-        content += `<a href="http://localhost:63343/case_study_module4_fe/login/listen-my-playlist.html?_ijt=fpvctg179jinqbrnlb3mv28l6v&_ij_reload=RELOAD_ON_SAVE" class="navbar-item">Playlist của bạn</a>`
+        content += `<a href="http://localhost:63342/case_study_module4_fe/login/listen-my-playlist.html?_ijt=gogip56rojohguusac1gpu6sdf&_ij_reload=RELOAD_ON_SAVE" class="navbar-item">Playlist của bạn</a>`
         document.getElementById("see-playlist").innerHTML = content
         document.getElementById("register-login").innerHTML = `<button class="btn btn-danger" onclick="logout()">Đăng xuất</button>`
     }
+}
+
+function loggingMyPlaylist() {
+    document.getElementById("register-login").innerHTML = `<button class="btn btn-danger" onclick="logout()">Đăng xuất</button>`
 }
 
 
@@ -154,7 +159,7 @@ function updateIndex(i) {
 }
 
 function changePageManagement() {
-    window.location.href = "http://localhost:63343/case_study_module4_fe/admin/song-management.html?_ijt=7n8o1jsh2rgfd6mpj7f687ni3t&_ij_reload=RELOAD_ON_SAVE"
+    window.location.href = "../admin/song-management.html"
 }
 
 function deletePlaylist(playlistId) {
@@ -187,4 +192,9 @@ function deleteSongPlaylist(songId) {
             }
         })
     }
+}
+
+function backToHome() {
+    window.location.href = "../login/home.html"
+    showAll();
 }

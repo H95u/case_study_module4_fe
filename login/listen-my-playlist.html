@@ -15,14 +15,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="../js/index.js"></script>
 </head>
-<body onload="seeMyPlaylist(0)">
+<body onload="seeMyPlaylist(0);loggingMyPlaylist()">
+
 <div class="row" id="top">
     <div class="col-lg-5" id="logo">
-        <a href="http://localhost:63343/case_study_module4_fe/login/login.html?_ijt=uc25vgcoicvhec23v094fdvfb6&_ij_reload=RELOAD_ON_SAVE"><img src="/img/logo/logo.png" height="50" width="70"/></a>
+        <a href="#" onclick="backToHome()"><img
+                src="/img/logo/logo.png" height="70" width="80"/></a>
     </div>
-    <div class="col-lg-5"><a href="http://localhost:63343/case_study_module4_fe/login/login.html?_ijt=uc25vgcoicvhec23v094fdvfb6&_ij_reload=RELOAD_ON_SAVE"><i class="bi bi-house-heart-fill" style="font-size: 60px;padding-left: 90px"></i></a></div>
-    <div class="col-lg-2">My account</div>
+    <div class="col-lg-5"><a
+            href="#" onclick="backToHome()"><i
+            class="bi bi-house-heart-fill" style="font-size: 60px;padding-left: 90px"></i></a></div>
+    <div class="col-lg-2" id="register-login"></div>
 </div>
+
 <div id="mid">
     <div class="row">
         <div class="col-lg-3" id="mid-left">
@@ -31,7 +36,7 @@
             <div id="my-playlist"></div>
             <div><i class="bi bi-plus-square" onclick="createPlaylist()"></i></div>
         </div>
-        <div class="col-lg-6 midlet" style="position: relative; background-color: rgba(255, 255, 255, 0.4)" >
+        <div class="col-lg-6 midlet" style="position: relative; background-color: rgba(255, 255, 255, 0.4)">
             <div id="mid-mid"></div>
             <div class="title-m" id="my-playlist-title"></div>
             <hr>
@@ -45,7 +50,7 @@
     </div>
     <div id="listen-music" style="text-align: center">
 
-</div>
+    </div>
 </div>
 </body>
 </html>

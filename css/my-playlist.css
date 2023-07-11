@@ -1,102 +1,105 @@
-    * {
-        padding: 0;
-    }
+* {
+    padding: 0;
+}
 
-    body {
-        background-color: black;
-        color: white;
-        min-height: 100vh;
-    }
+body {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+}
 
-    #top {
-        background-color: #999999;
-        height: 100px;
-        padding: 10px;
-    }
+#top {
+    background-color: white;
+    height: 100px;
+    padding: 10px;
+}
 
-    #mid-left {
-        background-color: #222b30;
-        height: 600px;
-        text-align: center;
-        opacity: 0.9;
-        padding: 20px;
-    }
+#mid-left {
+    background-color: #222b30;
+    height: 600px;
+    text-align: center;
+    opacity: 0.9;
+    padding: 20px;
+}
 
-    #mid-right {
-        background-color: #222b30;
-        overflow-y: scroll;
-        height: 600px;
-        text-align: center;
-        opacity: 0.9;
-        padding: 20px;
-        color: #f2f2f2;
-    }
+#mid-right {
+    background-color: #222b30;
+    overflow-y: scroll;
+    height: 600px;
+    text-align: center;
+    opacity: 0.9;
+    padding: 20px;
+    color: #f2f2f2;
+}
 
 
-    #mid {
-        background-color: silver;
-        padding-bottom: 50px;
-    }
+#mid {
+    background-color: white;
+    padding-bottom: 50px;
+}
 
-    #mid-mid {
-        height: 600px;
-        position: absolute;
-        visibility: visible;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(255, 255, 255, 0.4);
-    }
+#mid-mid {
+    height: 600px;
+    position: absolute;
+    visibility: visible;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+}
 
-    #bottom {
-        text-align: center;
-        background-color: white;
-    }
+#bottom {
+    text-align: center;
+    background-color: white;
+}
 
-    #logo {
-        padding: 20px;
-       height: 80px;
-    }
+#logo {
+    padding-left: 80px;
+}
 
-    .title-m {
-        text-align: center;
-        color: white;
-        position: relative;
-    }
+.title-m {
+    text-align: center;
+    color: white;
+    position: relative;
+}
 
-    a {
-        text-decoration: none;
-        color: black;
-    }
+a {
+    text-decoration: none;
+}
 
-    .bi-plus-square {
-        font-size: 24px;
-        cursor: pointer;
-    }
+.bi-plus-square {
+    font-size: 24px;
+    cursor: pointer;
+}
 
-    .playlist-name {
-        color: #ffffff;
-    }
+.playlist-name {
+    color: #ffffff;
+}
 
-    #lyric {
-        color: white;
-    }
+#lyric {
+    color: white;
+}
 
-    #song {
-        width: 500px;
-    }
-     #songList {
-         text-align: center;
-         color: white;
-         position: relative;
-     }
-    .col-lg-3 {
-        flex: 0 0 auto;
-        width: 25%;
-        padding: 20px;
-        color: white;
-        height: 100%;
-    }
+#song {
+    width: 100%;
+}
 
+#songList {
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+    padding: 20px;
+    color: white;
+    height: 100%;
+}
+
+#register-login{
+    padding: 30px;
+}
 
 
