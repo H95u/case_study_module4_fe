@@ -113,6 +113,7 @@ function seeMyPlaylist(plIndex) {
                 document.getElementById("listen-music").innerHTML = `<audio id="song" src="${data[playListIndex].song[index].mp3}" controls>`;
                 document.getElementById("song").play();
             } else {
+                document.getElementById("my-playlist").innerHTML = content;
                 document.getElementById("lyric").innerHTML = "";
                 document.getElementById("my-playlist-title").innerHTML = `<h1> ${data[playListIndex].name}</h1>`;
                 document.getElementById("songList").innerHTML = `<h1 style="text-align: center">Không có bài hát nào</h1>`

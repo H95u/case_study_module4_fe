@@ -124,6 +124,8 @@ function addNewSong() {
         type: "POST",
         data: formData,
         success: function () {
+            showAll();
+            alert("Đã thêm mới bài hát thành công !!")
         }
     })
     $('#createSongModal').modal('hide');
@@ -187,7 +189,10 @@ function deleteSong(id) {
         $.ajax({
             type: "DELETE",
             url: "http://localhost:8080/api/songs/" + id,
-            success: showAll
+            success: function () {
+                showAll();
+                alert("Đã xóa bài hát thành công !!")
+            }
         });
     }
 }
@@ -217,7 +222,8 @@ function updateSong() {
         type: "PUT",
         data: formData,
         success: function () {
-            showAll()
+            showAll();
+            alert("Đã cập nhật bài hát thành công !!")
         }
     })
     $('#updateSongModal').modal('hide');
