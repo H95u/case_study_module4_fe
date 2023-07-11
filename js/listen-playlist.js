@@ -22,7 +22,20 @@ function listenPlayList(index) {
     <h3 class="music-name">${response.songs[songIndex].name}</h3>
     <label for="range"></label><input type="range" name="range" id="range" class="range"/>
     <audio src="${response.songs[songIndex].mp3}" id="song" controls></audio>
+    
+     <div class="controls">
+        <ion-icon name="infinite-outline" class="play-infinite"></ion-icon>
+        <ion-icon name="play-back" class="play-back"></ion-icon>
+        <div class="play">
+            <div class="player-inner">
+                <ion-icon name="play" class="play-icon"></ion-icon>
+            </div>
+        </div>
+        <ion-icon name="play-forward" class="play-forward"></ion-icon>
+        <ion-icon name="repeat-outline" class="play-repeat"></ion-icon>
+    </div>
  ${getListMusic(response.songs)}
+
 </div>`
             let lyric = `<p>${response.songs[songIndex].lyric}</p>`
             document.getElementById("play-music").innerHTML = content;
