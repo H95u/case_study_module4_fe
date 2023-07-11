@@ -228,3 +228,11 @@ function updateSong() {
     })
     $('#updateSongModal').modal('hide');
 }
+
+function changeSingerManagePage() {
+    window.location.href = "singer-management.html"
+}
+function backToHome() {
+    window.location.href = "../login/home.html"
+}
+

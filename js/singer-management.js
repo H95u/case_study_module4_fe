@@ -90,3 +90,7 @@ function updateSinger() {
     })
     $('#updateSingerModal').modal('hide');
 }
+
+function backToSongManage() {
+    window.location.href = "song-management.html"
+}
