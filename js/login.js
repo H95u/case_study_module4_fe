@@ -96,8 +96,8 @@ function seeMyPlaylist(plIndex) {
         url: "http://localhost:8080/api/user-playlists/user/" + loggingUserId,
         type: "GET",
         success: function (data) {
-            let songContent = `<table class="table">`;
-            let content = `<table class="table table-hover" style="text-align: center">`
+            let songContent = `<table class="table table-hover">`;
+            let content = `<table class="table table-hover" id="table" style="text-align: center">`
             for (let i = 0; i < data.length; i++) {
                 content += getMyPlaylistName(data[i], i, data[i].id);
             }
@@ -109,13 +109,14 @@ function seeMyPlaylist(plIndex) {
                 document.getElementById("my-playlist").innerHTML = content;
                 document.getElementById("songList").innerHTML = songContent;
                 document.getElementById("lyric").innerHTML = `<p>${data[playListIndex].song[index].lyric}</p>`;
-                document.getElementById("my-playlist-title").innerHTML = `<h1> ${data[playListIndex].name}</h1>`;
+                document.getElementById("my-playlist-title").innerHTML = `<h1 class="playlist-name"> ${data[playListIndex].name}</h1>`;
+                document.getElementById("mid-mid").innerHTML = `<img src="${data[playListIndex].song[index].img}" style="height: 100%; width: 100%">`;
                 document.getElementById("listen-music").innerHTML = `<audio id="song" src="${data[playListIndex].song[index].mp3}" controls>`;
                 document.getElementById("song").play();
             } else {
                 document.getElementById("my-playlist").innerHTML = content;
                 document.getElementById("lyric").innerHTML = "";
-                document.getElementById("my-playlist-title").innerHTML = `<h1> ${data[playListIndex].name}</h1>`;
+                document.getElementById("my-playlist-title").innerHTML = `<h1 class="playlist-name"> ${data[playListIndex].name}</h1>`;
                 document.getElementById("songList").innerHTML = `<h1 style="text-align: center">Không có bài hát nào</h1>`
                 document.getElementById("listen-music").innerHTML = "";
             }
