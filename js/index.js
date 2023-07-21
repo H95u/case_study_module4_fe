@@ -91,17 +91,23 @@ function searchByName() {
     $.ajax({
         url: `http://localhost:8080/api/songs/search?name=${name}`,
         type: "GET",
-        success: function (data) {
-            let content = `<h2 class="title">DANH SÁCH BÀI HÁT</h2>
+        statusCode: {
+            200: function (data) {
+                let content = `<h2 class="title">DANH SÁCH BÀI HÁT</h2>
                              <div class="container-song">
                                         <div class="inner-container">
                                                <div class="row">`;
-            for (let i = 0; i < data.content.length; i++) {
-                content += getSong(data.content[i])
+                for (let i = 0; i < data.content.length; i++) {
+                    content += getSong(data.content[i])
+                }
+                content += `</div>`;
+                content += `</div>`;
+                document.getElementById("songList").innerHTML = content;
+            },
+            204: function () {
+                document.getElementById("songList").innerHTML = `
+                                               <div class="row"><div class="col-lg-12"><h1 style="font-size: 110px;text-align: center;color: red">Không có bài hát nào</h1></div></div>`;
             }
-            content += `</div>`;
-            content += `</div>`;
-            document.getElementById("songList").innerHTML = content;
         }
     })
 }
